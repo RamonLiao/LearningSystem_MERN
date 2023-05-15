@@ -12,6 +12,7 @@
 /build
 .env
 .vscode
+/other
 
 # misc
 .DS_Store
