@@ -44,7 +44,14 @@ if (
   process.env.NODE_ENV === "staging"
 ) {
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(
+      path.join(__dirname, "client", "build", "index.html"),
+      (err) => {
+        if (err) {
+          res.status(500).send(err);
+        }
+      }
+    );
   });
 }
 
@@ -53,3 +60,5 @@ if (
 app.listen(port, () => {
   console.log("Server is running on port 8080.");
 });
+
+module.exports = app;
