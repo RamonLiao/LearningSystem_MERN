@@ -28,9 +28,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-const root = path.join(__dirname, "client", "build");
-app.use(express.static(root));
-// app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 // routes
 app.use("/api/user", authRoute); // /api/* is needed for comunication in full stack. Anyone can access to it.
@@ -46,14 +44,14 @@ if (
   process.env.NODE_ENV === "staging"
 ) {
   app.get("*", (req, res) => {
-    res
-      .sendFile("index.html", { root })
-      .then()
-      .catch((err) => {
+    res.sendFile(
+      path.join(__dirname, "client", "build", "index.html"),
+      (err) => {
         if (err) {
           res.status(500).send(err);
         }
-      });
+      }
+    );
   });
 }
 
