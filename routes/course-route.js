@@ -7,6 +7,7 @@ router.use((req, res, next) => {
   next();
 });
 
+// get all courses from the system
 router.get("/", (req, res) => {
   Course.find({})
     .populate("instructor", ["username", "email"]) // populate() -> similar to join & select
