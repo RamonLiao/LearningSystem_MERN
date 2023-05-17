@@ -28,7 +28,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-const root = require("path").join(__dirname, "client", "build");
+const root = path.join(__dirname, "client", "build");
 app.use(express.static(root));
 // app.use(express.static(path.join(__dirname, "client", "build")));
 
