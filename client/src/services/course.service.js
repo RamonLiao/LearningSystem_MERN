@@ -46,6 +46,10 @@ class CourseService {
       token = "";
     }
 
+    // avoid empty string and allow to select all items
+    if (name === "") {
+      name = ".*";
+    }
     return axios.get(API_URL + "/findByName/" + name, {
       headers: {
         Authorization: token,

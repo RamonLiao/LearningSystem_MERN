@@ -16,7 +16,7 @@ const EnrollComponent = (props) => {
   const handleSearch = () => {
     CourseService.getCourseByName(searchInput)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setSearchResult(data.data);
       })
       .catch((err) => {

@@ -33,7 +33,7 @@ router.get("/instructor/:_instructor_id", (req, res) => {
 
 router.get("/findByName/:name", (req, res) => {
   let { name } = req.params;
-  Course.find({ title: name })
+  Course.find({ title: new RegExp(name) }) // regular expression for fuzzy search
     .populate("instructor", ["username", "email"])
     .then((course) => {
       res.status(200).send(course);
