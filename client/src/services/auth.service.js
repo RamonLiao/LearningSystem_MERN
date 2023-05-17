@@ -2,7 +2,7 @@ import axios from "axios";
 const dotenv = require("dotenv");
 dotenv.config();
 
-const API_URL = process.env.BACKEND_API_URL + "/api/user";
+const API_URL = process.env.REACT_APP_BACKEND_API_URL + "/api/user";
 
 class AuthService {
   login(email, password) {
