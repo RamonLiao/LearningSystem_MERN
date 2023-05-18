@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_BACKEND_API_URL + "/api/user";
-// const API_URL = "https://learning-system-mern.vercel.app/api/user";
+// const API_URL = process.env.REACT_APP_API + "/api/user";
+const API_URL = "https://learning-system-mern.vercel.app/api/user";
 
 class AuthService {
   login(email, password) {

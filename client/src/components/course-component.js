@@ -17,7 +17,7 @@ const CourseComponent = (props) => {
     } else {
       _id = "";
     }
-    if (currentUser.user.role == "instructor") {
+    if (currentUser.user.role === "instructor") {
       CourseService.get(_id)
         .then((data) => {
           console.log(data);
@@ -26,7 +26,7 @@ const CourseComponent = (props) => {
         .catch((err) => {
           console.log(err);
         });
-    } else if (currentUser.user.role == "student") {
+    } else if (currentUser.user.role === "student") {
       CourseService.getEnrolledCourses(_id)
         .then((data) => {
           console.log(data);
@@ -51,17 +51,17 @@ const CourseComponent = (props) => {
           </button>
         </div>
       )}
-      {currentUser && currentUser.user.role == "instructor" && (
+      {currentUser && currentUser.user.role === "instructor" && (
         <div>
           <h1>Welcome to instructor's Course page.</h1>
         </div>
       )}
-      {currentUser && currentUser.user.role == "student" && (
+      {currentUser && currentUser.user.role === "student" && (
         <div>
           <h1>Welcome to student's Course page.</h1>
         </div>
       )}
-      {currentUser && courseData && courseData.length != 0 && (
+      {currentUser && courseData && courseData.length !== 0 && (
         <div>
           <p>Here's the data we got back from the server.</p>
           {courseData.map((course) => (

@@ -48,12 +48,12 @@ const EnrollComponent = (props) => {
           </button>
         </div>
       )}
-      {currentUser && currentUser.user.role == "instructor" && (
+      {currentUser && currentUser.user.role === "instructor" && (
         <div>
           <h1>Only students can enroll in courses.</h1>
         </div>
       )}
-      {currentUser && currentUser.user.role == "student" && (
+      {currentUser && currentUser.user.role === "student" && (
         <div className="search input-group mb-3">
           <input
             onChange={handleChangeInput}
@@ -65,7 +65,7 @@ const EnrollComponent = (props) => {
           </button>
         </div>
       )}
-      {currentUser && searchResult && searchResult.length != 0 && (
+      {currentUser && searchResult && searchResult.length !== 0 && (
         <div>
           <p>Data we got back from API.</p>
           {searchResult.map((course) => (
