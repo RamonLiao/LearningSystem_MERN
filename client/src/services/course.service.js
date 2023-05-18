@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// const API_URL = process.env.REACT_APP_API + "/api/courses";
+// const API_URL = process.env.REACT_APP_API + "/api/courses"; // for local test
 const API_URL = "https://learning-system-mern.vercel.app/api/courses";
 
 class CourseService {
