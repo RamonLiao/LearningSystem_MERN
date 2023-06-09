@@ -58,7 +58,7 @@ if (
 // React (frontend) uses port 3000 in default.
 // Server (backend) uses other port rather than 3000.
 app.listen(port, () => {
-  console.log("Server is running on port 8080.");
+  console.log("Server is running on port " + port + ".");
 });
 
 module.exports = app;

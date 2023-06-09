@@ -72,10 +72,10 @@ const RegisterComponent = () => {
         <div className="form-group">
           <label htmlFor="role">Role</label>
           <select
+            onChange={handleChangeRole}
+            className="form-control"
             name="role"
             id="role"
-            className="form-control"
-            onChange={handleChangeRole}
             required
           >
             <option value=""></option>
